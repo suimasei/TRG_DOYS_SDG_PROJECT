@@ -1,7 +1,5 @@
 # TRG_DOYS_SDG_PROJECT
 
-# TRG_DOYS_SDG_PROJECT
-
 📌 Project Overview
 The sdg5_db is a relational database designed to track, manage, and analyze workplace dynamics with a focus on Sustainable Development Goal 5: Gender Equality. It monitors employee demographics, departmental structures, and workplace complaints—specifically targeting issues like harassment, promotion bias, and pay equality.
 
