@@ -1,29 +1,75 @@
 -- DML SCRIPT FOR INSERTING TEST DATA INTO SDG5_DB TABLES --
 
-START TRANSACTION;
 
--- --------------------------------------------------------
--- Dumping data for table `company`
--- --------------------------------------------------------
-
+-- Dumping data for company
 INSERT INTO `company` (`company_id`, `company_name`, `industry`) VALUES
 (1, 'Equality Tech Solutions', 'Information Technology'),
 (2, 'FairWorks Manufacturing', 'Manufacturing');
 
--- --------------------------------------------------------
--- Dumping data for table `department`
--- --------------------------------------------------------
-
+-- Dumping data for department
 INSERT INTO `department` (`department_id`, `company_id`, `department_name`) VALUES
 (1, 1, 'Human Resources'),
 (2, 1, 'Engineering'),
 (3, 2, 'Production'),
 (4, 2, 'Sales');
 
--- --------------------------------------------------------
--- Dumping data for table `rules`
--- --------------------------------------------------------
+-- Dumping data for employee
+INSERT INTO `employee` (`employee_id`, `name`, `age`, `academical_achievement`, `sex`, `job_title`, `date_hired`, `department_id`, `company_id`) VALUES
+(1, 'Juan Dela Cruz', 34, 'High School Graduate', 'M', 'Operations Manager', '2018-03-15', 1, 2),
+(2, 'Mark Reyes', 37, 'High School Graduate', 'M', 'Department Manager', '2017-07-10', 3, 2),
+(3, 'Jose Santos', 33, 'High School Graduate', 'M', 'Team Supervisor', '2019-01-05', 4, 1),
+(4, 'Carlos Lim', 40, 'High School Graduate', 'M', 'Senior Supervisor', '2016-09-01', 3, 2),
+(5, 'Miguel Torres', 35, 'High School Graduate', 'M', 'Shift Supervisor', '2019-11-20', 2, 1),
+(6, 'Anthony Lee', 36, 'High School Graduate', 'M', 'Branch Manager', '2018-05-18', 1, 1),
+(7, 'Ramon Garcia', 32, 'High School Graduate', 'M', 'Team Leader', '2020-04-12', 2, 2),
+(8, 'Paulo Cruz', 38, 'High School Graduate', 'M', 'Operations Supervisor', '2016-10-08', 1, 2),
+(9, 'Luis Mendoza', 39, 'High School Graduate', 'M', 'Plant Manager', '2015-12-02', 3, 1),
+(10, 'Adrian Flores', 31, 'High School Graduate', 'M', 'Senior Team Leader', '2020-02-14', 4, 2),
+(11, 'Kevin Ramos', 33, 'High School Graduate', 'M', 'Line Supervisor', '2019-06-01', 1, 1),
+(12, 'Noel Aquino', 41, 'High School Graduate', 'M', 'Area Manager', '2014-08-20', 2, 1),
+(13, 'Daniel Kim', 30, 'High School Graduate', 'M', 'Assistant Manager', '2021-06-30', 3, 2),
+(14, 'Patrick Go', 37, 'High School Graduate', 'M', 'Section Supervisor', '2017-03-22', 3, 2),
+(15, 'Robert Chan', 42, 'High School Graduate', 'M', 'Division Manager', '2013-11-05', 1, 2),
+(16, 'Francis Uy', 34, 'High School Graduate', 'M', 'Production Supervisor', '2018-09-13', 4, 2),
+(17, 'Jerome Tan', 36, 'High School Graduate', 'M', 'Store Manager', '2017-01-27', 2, 1),
+(18, 'Gabriel Cruz', 32, 'High School Graduate', 'M', 'Team Supervisor', '2020-09-19', 1, 1),
+(19, 'Victor Ong', 39, 'High School Graduate', 'M', 'Senior Manager', '2015-05-07', 2, 1),
+(20, 'Ivan Dizon', 35, 'High School Graduate', 'M', 'Operations Manager', '2019-01-11', 4, 2),
+(21, 'Samuel Perez', 33, 'College Graduate', 'M', 'Senior Manager', '2018-03-03', 3, 2),
+(22, 'Christian Yu', 38, 'Bachelor\'s Degree', 'M', 'Finance Manager', '2014-06-25', 3, 2),
+(23, 'Leo Sanchez', 36, 'College Graduate', 'M', 'HR Manager', '2016-12-15', 1, 1),
+(24, 'Harold Cruz', 34, 'Bachelor\'s Degree', 'M', 'IT Manager', '2018-08-09', 2, 2),
+(25, 'Dennis Cruz', 40, 'Bachelor\'s Degree', 'M', 'General Manager', '2013-10-30', 1, 2),
+(26, 'Maria Santos', 27, 'Bachelor\'s Degree', 'F', 'Administrative Assistant', '2021-04-05', 4, 1),
+(27, 'Ana Lopez', 29, 'Bachelor\'s Degree', 'F', 'Account Assistant', '2019-09-17', 1, 2),
+(28, 'Liza Dela Rosa', 25, 'College Graduate', 'F', 'HR Assistant', '2023-01-09', 2, 2),
+(29, 'Grace Kim', 30, 'Master\'s Degree', 'F', 'Project Coordinator', '2018-07-23', 3, 2),
+(30, 'Patricia Lim', 26, 'Bachelor\'s Degree', 'F', 'Network Support', '2020-11-30', 4, 1),
+(31, 'Angela Lee', 28, 'Bachelor\'s Degree', 'F', 'Business Support Staff', '2020-02-19', 2, 2),
+(32, 'Rosa Garcia', 24, 'College Graduate', 'F', 'Customer Service Representative', '2022-05-21', 2, 2),
+(33, 'Ella Torres', 27, 'Bachelor\'s Degree', 'F', 'Systems Support', '2021-10-01', 3, 1),
+(34, 'Catherine Cruz', 31, 'Master\'s Degree', 'F', 'Senior Analyst', '2018-12-11', 4, 1),
+(35, 'Bea Mendoza', 23, 'Bachelor\'s Degree', 'F', 'Junior Developer', '2023-03-20', 1, 1),
+(36, 'Jenny Ramos', 28, 'Bachelor\'s Degree', 'F', 'Quality Assurance Associate', '2020-06-15', 2, 1),
+(37, 'Nicole Aquino', 30, 'Bachelor\'s Degree', 'F', 'Operations Assistant', '2019-08-28', 3, 1),
+(38, 'Diana Kim', 26, 'College Graduate', 'F', 'Sales Associate', '2022-07-05', 4, 1),
+(39, 'Karen Go', 27, 'Bachelor\'s Degree', 'F', 'IT Support Specialist', '2020-04-10', 2, 1),
+(40, 'Rachel Chan', 32, 'Master\'s Degree', 'F', 'Senior Specialist', '2017-10-18', 2, 2),
+(41, 'Faith Uy', 27, 'Bachelor\'s Degree', 'F', 'Data Analyst', '2021-07-27', 3, 2),
+(42, 'Joan Tan', 29, 'Bachelor\'s Degree', 'F', 'Logistics Assistant', '2019-12-06', 1, 1),
+(43, 'Hannah Cruz', 25, 'College Graduate', 'F', 'Marketing Assistant', '2022-08-02', 1, 2),
+(44, 'Ivy Ong', 31, 'Master\'s Degree', 'F', 'Engineer', '2018-03-29', 4, 2),
+(45, 'Olivia Dizon', 28, 'Bachelor\'s Degree', 'F', 'Procurement Assistant', '2020-12-21', 2, 1),
+(46, 'Sophia Perez', 26, 'Bachelor\'s Degree', 'F', 'HR Staff', '2022-02-18', 2, 2),
+(47, 'Clarisse Yu', 30, 'Bachelor\'s Degree', 'F', 'Accounting Staff', '2019-05-09', 3, 1),
+(48, 'Lara Sanchez', 27, 'College Graduate', 'F', 'Warehouse Clerk', '2020-09-03', 3, 2),
+(49, 'Mika Cruz', 26, 'Bachelor\'s Degree', 'F', 'Graphic Designer', '2021-11-12', 2, 2),
+(50, 'Erika Reyes', 31, 'Bachelor\'s Degree', 'F', 'Team Assistant', '2018-06-08', 1, 1),
+(255, 'jc', 24, 'College Degree', 'M', 'Senior Analyst', '2024-04-27', 1, 2),
+(405, 'Jack Andrada', 24, 'College Degree', 'M', 'Senior Developer', '2025-06-12', 2, 2),
+(500, 'jackie', 24, 'College Degree', 'M', 'Senior Analyst', '2024-04-27', 3, 2);
 
+-- Dumping data for rules
 INSERT INTO `rules` (`rules_id`, `policy_name`, `category`) VALUES
 (1, 'Anti-Sexual Harassment Policy', 'Harassment'),
 (2, 'Equal Pay for Equal Work Policy', 'Pay Equality'),
@@ -31,71 +77,7 @@ INSERT INTO `rules` (`rules_id`, `policy_name`, `category`) VALUES
 (4, 'Parental Leave and Care Policy', 'Parental Rights'),
 (5, 'Anti-Bullying and Respect Policy', 'Workplace Respect');
 
--- --------------------------------------------------------
--- Dumping data for table `employee`
--- NOTE: department_id column is added based on the schema requirement. 
--- The values are logically assigned (1:HR, 2:Eng, 3:Prod, 4:Sales).
--- --------------------------------------------------------
-
-INSERT INTO `employee` (`employee_id`, `name`, `age`, `academical_achievement`, `sex`, `job_title`, `date_hired`, `department_id`) VALUES
--- Equality Tech Solutions (Departments 1: HR, 2: Engineering)
-(1, 'Juan Dela Cruz', 34, 'High School Graduate', 'M', 'Operations Manager', '2018-03-15', 2),
-(2, 'Mark Reyes', 37, 'High School Graduate', 'M', 'Department Manager', '2017-07-10', 2),
-(3, 'Jose Santos', 33, 'High School Graduate', 'M', 'Team Supervisor', '2019-01-05', 2),
-(4, 'Carlos Lim', 40, 'High School Graduate', 'M', 'Senior Supervisor', '2016-09-01', 2),
-(5, 'Miguel Torres', 35, 'High School Graduate', 'M', 'Shift Supervisor', '2019-11-20', 2),
--- FairWorks Manufacturing (Departments 3: Production, 4: Sales)
-(6, 'Anthony Lee', 36, 'High School Graduate', 'M', 'Branch Manager', '2018-05-18', 3),
-(7, 'Ramon Garcia', 32, 'High School Graduate', 'M', 'Team Leader', '2020-04-12', 3),
-(8, 'Paulo Cruz', 38, 'High School Graduate', 'M', 'Operations Supervisor', '2016-10-08', 3),
-(9, 'Luis Mendoza', 39, 'High School Graduate', 'M', 'Plant Manager', '2015-12-02', 3),
-(10, 'Adrian Flores', 31, 'High School Graduate', 'M', 'Senior Team Leader', '2020-02-14', 3),
-(11, 'Kevin Ramos', 33, 'High School Graduate', 'M', 'Line Supervisor', '2019-06-01', 4),
-(12, 'Noel Aquino', 41, 'High School Graduate', 'M', 'Area Manager', '2014-08-20', 4),
-(13, 'Daniel Kim', 30, 'High School Graduate', 'M', 'Assistant Manager', '2021-06-30', 4),
-(14, 'Patrick Go', 37, 'High School Graduate', 'M', 'Section Supervisor', '2017-03-22', 4),
-(15, 'Robert Chan', 42, 'High School Graduate', 'M', 'Division Manager', '2013-11-05', 4),
-(16, 'Francis Uy', 34, 'High School Graduate', 'M', 'Production Supervisor', '2018-09-13', 3),
-(17, 'Jerome Tan', 36, 'High School Graduate', 'M', 'Store Manager', '2017-01-27', 4),
-(18, 'Gabriel Cruz', 32, 'High School Graduate', 'M', 'Team Supervisor', '2020-09-19', 2),
-(19, 'Victor Ong', 39, 'High School Graduate', 'M', 'Senior Manager', '2015-05-07', 2),
-(20, 'Ivan Dizon', 35, 'High School Graduate', 'M', 'Operations Manager', '2019-01-11', 2),
-(21, 'Samuel Perez', 33, 'College Graduate', 'M', 'Senior Manager', '2018-03-03', 2),
-(22, 'Christian Yu', 38, 'Bachelor\'s Degree', 'M', 'Finance Manager', '2014-06-25', 1), 
-(23, 'Leo Sanchez', 36, 'College Graduate', 'M', 'HR Manager', '2016-12-15', 1),
-(24, 'Harold Cruz', 34, 'Bachelor\'s Degree', 'M', 'IT Manager', '2018-08-09', 2),
-(25, 'Dennis Cruz', 40, 'Bachelor\'s Degree', 'M', 'General Manager', '2013-10-30', 2),
-(26, 'Maria Santos', 27, 'Bachelor\'s Degree', 'F', 'Administrative Assistant', '2021-04-05', 1),
-(27, 'Ana Lopez', 29, 'Bachelor\'s Degree', 'F', 'Account Assistant', '2019-09-17', 1),
-(28, 'Liza Dela Rosa', 25, 'College Graduate', 'F', 'HR Assistant', '2023-01-09', 1),
-(29, 'Grace Kim', 30, 'Master\'s Degree', 'F', 'Project Coordinator', '2018-07-23', 2),
-(30, 'Patricia Lim', 26, 'Bachelor\'s Degree', 'F', 'Network Support', '2020-11-30', 2),
-(31, 'Angela Lee', 28, 'Bachelor\'s Degree', 'F', 'Business Support Staff', '2020-02-19', 4),
-(32, 'Rosa Garcia', 24, 'College Graduate', 'F', 'Customer Service Representative', '2022-05-21', 4),
-(33, 'Ella Torres', 27, 'Bachelor\'s Degree', 'F', 'Systems Support', '2021-10-01', 2),
-(34, 'Catherine Cruz', 31, 'Master\'s Degree', 'F', 'Senior Analyst', '2018-12-11', 2),
-(35, 'Bea Mendoza', 23, 'Bachelor\'s Degree', 'F', 'Junior Developer', '2023-03-20', 2),
-(36, 'Jenny Ramos', 28, 'Bachelor\'s Degree', 'F', 'Quality Assurance Associate', '2020-06-15', 2),
-(37, 'Nicole Aquino', 30, 'Bachelor\'s Degree', 'F', 'Operations Assistant', '2019-08-28', 3),
-(38, 'Diana Kim', 26, 'College Graduate', 'F', 'Sales Associate', '2022-07-05', 4),
-(39, 'Karen Go', 27, 'Bachelor\'s Degree', 'F', 'IT Support Specialist', '2020-04-10', 2),
-(40, 'Rachel Chan', 32, 'Master\'s Degree', 'F', 'Senior Specialist', '2017-10-18', 1),
-(41, 'Faith Uy', 27, 'Bachelor\'s Degree', 'F', 'Data Analyst', '2021-07-27', 2),
-(42, 'Joan Tan', 29, 'Bachelor\'s Degree', 'F', 'Logistics Assistant', '2019-12-06', 3),
-(43, 'Hannah Cruz', 25, 'College Graduate', 'F', 'Marketing Assistant', '2022-08-02', 4),
-(44, 'Ivy Ong', 31, 'Master\'s Degree', 'F', 'Engineer', '2018-03-29', 2),
-(45, 'Olivia Dizon', 28, 'Bachelor\'s Degree', 'F', 'Procurement Assistant', '2020-12-21', 3),
-(46, 'Sophia Perez', 26, 'Bachelor\'s Degree', 'F', 'HR Staff', '2022-02-18', 1),
-(47, 'Clarisse Yu', 30, 'Bachelor\'s Degree', 'F', 'Accounting Staff', '2019-05-09', 1),
-(48, 'Lara Sanchez', 27, 'College Graduate', 'F', 'Warehouse Clerk', '2020-09-03', 3),
-(49, 'Mika Cruz', 26, 'Bachelor\'s Degree', 'F', 'Graphic Designer', '2021-11-12', 2),
-(50, 'Erika Reyes', 31, 'Bachelor\'s Degree', 'F', 'Team Assistant', '2018-06-08', 3),
-(9999, 'Juan Dela Cruz', 30, 'Bachelor Degree', 'M', 'Senior Analyst', '2023-01-15', 2);
-
--- --------------------------------------------------------
--- Dumping data for table `workplace_complaint` (50 records)
--- --------------------------------------------------------
-
+-- Dumping data for workplace_complaint
 INSERT INTO `workplace_complaint` (`complaint_id`, `employee_id`, `rules_id`, `complaint_type`, `complaint_date`, `status`, `resolution_notes`) VALUES
 (1, 1, 1, 'harassment', '2023-01-10', 'pending', NULL),
 (2, 2, 1, 'harassment', '2023-02-14', 'investigating', NULL),
@@ -146,6 +128,5 @@ INSERT INTO `workplace_complaint` (`complaint_id`, `employee_id`, `rules_id`, `c
 (47, 36, 3, 'termination', '2024-09-10', 'pending', NULL),
 (48, 39, 3, 'termination', '2024-10-01', 'pending', NULL),
 (49, 41, 4, 'conduct', '2024-11-20', 'investigating', NULL),
-(50, 37, 4, 'conduct', '2024-12-05', 'pending', NULL);
-
-COMMIT;
+(50, 37, 4, 'conduct', '2024-12-05', 'pending', NULL),
+(51, 405, 3, 'Promotion', '2025-12-16', 'filed', NULL);
