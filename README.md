@@ -1,39 +1,94 @@
 # TRG_DOYS_SDG_PROJECT
 
-📌 Project Overview:
+** Project Overview:**
+ 
 The sdg5_db is a relational database designed to track, manage, and analyze workplace dynamics with a focus on Sustainable Development Goal 5: Gender Equality. It monitors employee demographics, departmental structures, and workplace complaints—specifically targeting issues like harassment, promotion bias, and pay equality.
+
+**Problem Statement:**
 
 This system is built to help organizations identify patterns of discrimination and ensure a fair working environment through data-driven analysis of position levels and complaint resolutions.
 
-🏗️ Database Architecture:
-The database consists of 5 core tables and specialized views for analytical reporting:
 
-•company: Stores information about corporate entities.
+**The system implements core DBMS concepts such as:**
 
-•department: Links departments to specific companies.
+- **Relational table design** for employees, departments, companies, policies, and complaints
+- **Primary and foreign key constraints** to maintain data integrity
+- **Stored procedures** to safely insert validated employee records using transactions
+- **Triggers** to enforce complaint status rules and automatically handle reopened cases
+- **Views** to analyze complaints by gender, educational attainment, and position level
 
-•employee: Contains detailed demographics (Sex, Age, Academical Achievement) and job details.
 
-•rules: Defines workplace policies (e.g., Anti-Sexual Harassment, Parental Leave).
+**Core Tables**
 
-•workplace_complaint: Records specific incidents, their status (Pending, Investigating, Resolved), and resolution notes.
+- company – Stores company information
+- department – Departments under each company
+- employee– Employee demographic and job details
+- rules – Workplace policies (e.g., harassment, pay equality)
+- workplace_complaint – Employee complaints and case status
 
-🛠️ Key Features:
-1. Automated Status Validation
-The system includes a Trigger (validate_status_on_update) that ensures the status of a complaint only moves between valid states: pending, filed, investigating, or resolved.
+** Relationships**
 
-2. Transactional Integrity
-A Stored Procedure (Add_New_Employee) is implemented to handle new hires. It includes:
+- Employees belong to departments and companies
+- Complaints are linked to employees and specific rules
+- Foreign key constraints enforce referential integrity
 
-•Input Validation: Ensures the sex field is restricted to 'M' or 'F'.
+Technologies Used:
 
-•Error Handling: Uses a ROLLBACK mechanism to prevent partial data entry if a duplicate ID or integrity violation occurs.
+- MySQL / MariaDB
+- phpMyAdmin
+- SQL (DDL, DML, Triggers, Procedures, Views)
 
-3. Smart Resolution Logic
-A Trigger (clear_notes_on_reopen) automatically wipes resolution_notes if a previously "Resolved" case is reopened. This prevents outdated information from confusing active investigations.
+**How to Run the Project:**
 
-4. Advanced Analytics Views
+1. Open **phpMyAdmin** or any MySQL client
+2. Create a database named:
+   ```sql
+   CREATE DATABASE sdg5_db;
+3. Import the provided SQL file sdg5_db.sql
+4. Ensure the database server supports: Triggers, Stored Procedures, Views
 
-•employee_position_levels: Categorizes staff into "High Position" or "Low Position" based on keywords in their job titles (Manager, Supervisor, Assistant, etc.)
+**5. Individual Contributions:**
 
-•comprehensive_complaint_position_analysis: A complex view that joins employees with complaints to analyze if certain complaint types (like promotion bias) are more prevalent among specific genders or academic backgrounds.
+**Andrada, Jack Zyruz:**
+2.1. Functional Requirements and Non-Functional Requirements
+2.3. Schema Normalization Analysis
+3.1. Core DBMS Concepts Used 
+3.2. ER Diagram
+4.1. Test Cases
+4.2. ACID Compliance Test
+
+**Condino, Zyann Kyle:**
+3.1. Core DBMS Concepts Used 
+3.2. ER Diagram
+3.3. Transaction Flowchart
+4.1. Test Cases
+4.2. ACID Compliance Test
+Github
+
+**Dela Cruz, Harvey:**
+1.1 Project Overview & UN SDG Target
+1.2. Problem Statement
+3.1. Core DBMS Concepts Used 
+3.2. ER Diagram
+5.1. Conclusion
+PPT
+
+**Macabangon, John Carlo:**
+3.2. ER Diagram
+3.3. Transaction Flowchart
+4.2. ACID Compliance Test
+PPT
+
+**Monte, Manuel:**
+2.1. Functional Requirements and Non-Functional Requirements
+2.2. Data Requirements 
+4.2. ACID Compliance Test
+
+
+
+
+
+
+
+
+
