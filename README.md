@@ -9,9 +9,13 @@ This system is built to help organizations identify patterns of discrimination a
 The database consists of 5 core tables and specialized views for analytical reporting:
 
 •company: Stores information about corporate entities.
+
 •department: Links departments to specific companies.
+
 •employee: Contains detailed demographics (Sex, Age, Academical Achievement) and job details.
+
 •rules: Defines workplace policies (e.g., Anti-Sexual Harassment, Parental Leave).
+
 •workplace_complaint: Records specific incidents, their status (Pending, Investigating, Resolved), and resolution notes.
 
 🛠️ Key Features:
@@ -20,7 +24,9 @@ The system includes a Trigger (validate_status_on_update) that ensures the statu
 
 2. Transactional Integrity
 A Stored Procedure (Add_New_Employee) is implemented to handle new hires. It includes:
+
 •Input Validation: Ensures the sex field is restricted to 'M' or 'F'.
+
 •Error Handling: Uses a ROLLBACK mechanism to prevent partial data entry if a duplicate ID or integrity violation occurs.
 
 3. Smart Resolution Logic
