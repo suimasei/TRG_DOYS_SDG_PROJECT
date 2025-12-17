@@ -55,7 +55,7 @@ This system is built to help organizations identify patterns of discrimination a
 3.1. Core DBMS Concepts Used,
 3.2. ER Diagram,
 4.1. Test Cases,
-4.2. ACID Compliance Test,
+4.2. ACID Compliance Test
 
 **Condino, Zyann Kyle:**
 3.1. Core DBMS Concepts Used,
